@@ -1,0 +1,6 @@
+
+vendor/
+.vscode*
+
+taberneiro
+myvalues.yaml
