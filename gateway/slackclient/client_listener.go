@@ -64,7 +64,7 @@ func (s *Slack) run(ctx context.Context) {
 			log.Println("Infos:", ev.Info)
 			log.Println("Connection counter:", ev.ConnectionCount)
 			attachment := slack.Attachment{
-				Text:     "My Menu",
+				Text:     config.MenuImageText,
 				ImageURL: config.MenuImageLink,
 			}
 			rtm.SendMessage(rtm.NewOutgoingMessage(config.HelloMessage, config.ChannelID))
