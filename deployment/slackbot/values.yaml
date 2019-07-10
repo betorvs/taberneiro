@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: betorvs/taberneiro
-  tag: test2
+  tag: 0.1.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -57,3 +57,6 @@ slackAppID: "ALSSSS"
 slackAppName: "taberneiro"
 slackMenuLinkImage: "https://d3itj9t5jzykfd.cloudfront.net/ui/451238/image_5be4762c7d4c8.jpg"
 slackMenuText: '[{\"Text\":\"1x beef\",\"Value\": \"1-beef\"},{\"Text\":\"1x pork\",\"Value\":\"1-pork\"},{\"Text\":\"1x chicken\",\"Value\":\"1-chicken\"},{\"Text\":\"1x Wine\",\"Value\":\"1-wine\"},{\"Text\":\"1x Beer\",\"Value\":\"1-beer\"}]'
+slackImageText: 'My Menu. Please, order before 05:00 PM'
+slackHelloMessage: 'Good Morning, order to me @taberneiro'
+slackSuggestion: 'Please, mark my name @taberneiro and include this'

@@ -41,6 +41,12 @@ spec:
             value: "{{ .Values.slackMenuLinkImage }}"
           - name: SLACK_SELECT_MENU
             value: "{{ .Values.slackMenuText }}"
+          - name: SLACK_IMAGE_TEXT
+            value: "{{ .Values.slackImageText }}"
+          - name: SLACK_HELLO_MESSAGE
+            value: "{{ .Values.slackHelloMessage }}"
+          - name: SLACK_SUGGESTION
+            value: "{{ .Values.slackSuggestion }}"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
