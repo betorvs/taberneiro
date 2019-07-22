@@ -22,6 +22,7 @@ func main() {
 	g.GET("/health", controller.CheckHealth)
 	g.GET("/metrics", echo.WrapHandler(promhttp.Handler()))
 	g.POST("/events", controller.ReceiveEvents)
+	g.POST("/messages", controller.ReceiveMessages)
 
 	ctx := context.Background()
 	s, err := slackclient.New()

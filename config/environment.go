@@ -32,6 +32,8 @@ var (
 	MenuImageLink string
 	//SelectMenu constains the json with the menu items
 	SelectMenu string
+	//HeaderMagic string
+	HeaderMagic string
 )
 
 func getEnv(key, defaultValue string) string {
@@ -42,10 +44,6 @@ func getEnv(key, defaultValue string) string {
 }
 
 func init() {
-	Port = os.Getenv("SERVER_PORT")
-	if Port == "" {
-		log.Fatal("variable SERVER_PORT not defined")
-	}
 	SlackToken = os.Getenv("SLACK_TOKEN")
 	if SlackToken == "" {
 		log.Fatal("variable SLACK_TOKEN not defined")
@@ -66,6 +64,8 @@ func init() {
 	if DirectMessage == "" {
 		log.Fatal("variable SLACK_DIRECT_MESSAGE not defined")
 	}
+	Port = getEnv("SERVER_PORT", "9090")
+	HeaderMagic = getEnv("HEADER_MAGIC", "103e3bfe2a7ced4ee3413bce69bd449a74c1ade7dc65741a")
 	MagicWord = getEnv("SLACK_MAGIC_WORD", "hey")
 	Suggestion = getEnv("SLACK_SUGGESTION", "Please, use this")
 	MenuText = getEnv("SLACK_MENU_TEXT", "Pick an item from the dropdown list")
