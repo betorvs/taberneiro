@@ -1,4 +1,6 @@
 # Taberneiro
+Travis-CI: [![Travis-CI Build Status](https://travis-ci.org/betorvs/taberneiro.svg?branch=master)](https://travis-ci.org/betorvs/taberneiro)
+
 
 This is a slack bot written in Golang with Helm charts to deploy it.
 
