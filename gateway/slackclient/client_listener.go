@@ -64,11 +64,14 @@ func (s *Slack) run(ctx context.Context) {
 			log.Println("Infos:", ev.Info)
 			log.Println("Connection counter:", ev.ConnectionCount)
 			attachment := slack.Attachment{
+				Text: config.HelloMessage,
+			}
+			attachmentMenu := slack.Attachment{
 				Text:     config.MenuImageText,
 				ImageURL: config.MenuImageLink,
 			}
-			rtm.SendMessage(rtm.NewOutgoingMessage(config.HelloMessage, config.ChannelID))
 			go SimpleMessage(config.ChannelID, attachment)
+			go SimpleMessage(config.ChannelID, attachmentMenu)
 
 		case *slack.MessageEvent:
 			// fmt.Printf("Message: %v\n", ev)

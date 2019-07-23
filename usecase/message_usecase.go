@@ -10,8 +10,10 @@ import (
 // PostMessage func
 func PostMessage(data *domain.Message) (string, error) {
 	text := data.Text
+	image := data.ImageLink
 	attachment := slack.Attachment{
-		Text: text,
+		Text:     text,
+		ImageURL: image,
 	}
 	go slackclient.SimpleMessage(config.ChannelID, attachment)
 	return "OK", nil
