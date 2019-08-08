@@ -46,7 +46,7 @@ func ActionEvent(data *slack.InteractionCallback, c echo.Context) (slack.Message
 		}
 		res = originalMessage
 	case actionStart:
-		title := ":ok: i accepted that!"
+		title := config.AcceptMessage
 		value := ""
 		originalMessage := data.OriginalMessage
 		originalMessage.ReplaceOriginal = true
@@ -67,7 +67,7 @@ func ActionEvent(data *slack.InteractionCallback, c echo.Context) (slack.Message
 		res = originalMessage
 
 	case actionCancel:
-		title := fmt.Sprintf(":x: @%s canceled the request", data.User.Name)
+		title := fmt.Sprintf(":x: @%s %s", data.User.Name, config.CancelMessage)
 		value := ""
 		originalMessage := data.OriginalMessage
 		originalMessage.ReplaceOriginal = true

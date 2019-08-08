@@ -34,6 +34,10 @@ var (
 	SelectMenu string
 	//HeaderMagic string
 	HeaderMagic string
+	//AcceptMessage string
+	AcceptMessage string
+	//CancelMessage string
+	CancelMessage string
 )
 
 func getEnv(key, defaultValue string) string {
@@ -73,4 +77,6 @@ func init() {
 	MenuImageText = getEnv("SLACK_IMAGE_TEXT", "My Menu")
 	MenuImageLink = getEnv("SLACK_MENU_LINK_IMAGE", "https://d3itj9t5jzykfd.cloudfront.net/ui/451238/image_5be4762c7d4c8.jpg")
 	SelectMenu = getEnv("SLACK_SELECT_MENU", "[{\"Text\":\"1x beef\",\"Value\": \"1-beef\"},{\"Text\":\"1x pork\",\"Value\":\"1-pork\"},{\"Text\":\"1x chicken\",\"Value\":\"1-chicken\"},{\"Text\":\"1x Wine\",\"Value\":\"1-wine\"},{\"Text\":\"1x Beer\",\"Value\":\"1-beer\"}]")
+	AcceptMessage = getEnv("SLACK_ACCEPT_MESSAGE", ":ok: i accepted that!")
+	CancelMessage = getEnv("SLACK_CANCEL_MESSAGE", "canceled the request")
 }
